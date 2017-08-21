@@ -9,12 +9,6 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/1.css">
-  <script>
-    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
-    window.onresize = function () {
-      document.querySelector("html").style.fontSize = window.screen.width / 10 + "px";
-    }
-  </script>
 </head>
 
 <body>
@@ -185,19 +179,24 @@
   <!--返回顶部-->
   <div class="back .container-fluid">
     <div class="row">
-      <div class="col-xs-4">登录</div>
-      <div class="col-xs-4">注册</div>
-      <div class="col-xs-4">返回顶部</div>
+      <div class="log col-xs-4">登录</div>
+      <div class="reg col-xs-4">注册</div>
+      <div class="bt col-xs-4 ">返回顶部<i class="iconfont">&#xe501;</i></div>
+    </div>
+    <!--下载app-->
+    <div class="appDown">
+      <p class="p1"><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+      <p>m.manmanbuy.com</p>
     </div>
   </div>
 
   <!--底部-->
   <div class="bottom"></div>
 
-
-
   <script src="../script/jquery.1.12.4.js"></script>
   <script src="../script/bootstrap.js"></script>
+  <script src="../script/iscroll.js"></script>
+  <script src="../script/demoUtils.js"></script>
   <script src="../script/1.js"></script>
 </body>
 

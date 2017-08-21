@@ -23,6 +23,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    min-width: 320px;
+    overflow: hidden;
+}
+
 
 // 顶部
 .top {
@@ -117,3 +122,93 @@
         }
     }
 }
+
+// 返回顶部部分
+.back{
+    .row {
+        height: 34px;
+        margin-top: 25px;
+        line-height: 34px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        >div {
+            text-align: center;
+            color:#333;
+        }
+        .log {
+            border-right: 1px solid #ccc;
+        }
+        .reg {
+            border-right: 1px solid #ccc;
+        }
+        .bt {
+            i {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+        }
+    }
+    // 下载手机APP
+    .appDown {
+        p {
+            text-align: center;
+            margin:0;
+            padding:0;
+        }
+        .p1 {
+            margin-top: 15px !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// body {
+// 	/* On modern browsers, prevent the whole page to bounce */
+// 	overflow: hidden;
+// }
+
+// #wrapper {
+// 	position: relative;
+// 	width: 300px;
+// 	height: 300px;
+// 	overflow: hidden;
+
+// 	/* Prevent native touch events on Windows */
+// 	-ms-touch-action: none;
+
+// 	/* Prevent the callout on tap-hold and text selection */
+// 	-webkit-touch-callout: none;
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	-ms-user-select: none;
+// 	user-select: none;
+
+// 	/* Prevent text resize on orientation change, useful for web-apps */
+// 	-webkit-text-size-adjust: none;
+// 	-moz-text-size-adjust: none;
+// 	-ms-text-size-adjust: none;
+// 	-o-text-size-adjust: none;
+// 	text-size-adjust: none;
+// }
+
+// #scroller {
+// 	position: absolute;
+
+// 	/* Prevent elements to be highlighted on tap */
+// 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+// 	/* Put the scroller into the HW Compositing layer right from the start */
+// 	-webkit-transform: translateZ(0);
+// 	-moz-transform: translateZ(0);
+// 	-ms-transform: translateZ(0);
+// 	-o-transform: translateZ(0);
+// 	transform: translateZ(0);
+// }
