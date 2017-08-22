@@ -17,24 +17,5 @@ $(function () {
                 $(this).attr("flag", "false").find(".jiantou").html("&#xf0170;");
             });
         }
-    });
-
-
-
-
-
-
-
-    // 防止页面出现滚动条，先overflow:hidden
-    var myScroll;
-
-    function loaded() {
-        myScroll = new IScroll('#wrapper');
-    }
-
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-        capture: false,
-        passive: false
-    } : false);
-    loaded();
+    })
 });
