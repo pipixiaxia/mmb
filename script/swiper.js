@@ -18,7 +18,7 @@ function yourScroll() {
   var totalDistance = 0;
 
   // 弹簧
-  var springs = 50;
+  var springs = 150;
 
   // 上滑最大的距离  上滑的距离是负数
   var maxUpDis = -(left_menu.offsetHeight - left_menu.parentNode.offsetHeight);
@@ -79,12 +79,12 @@ function yourScroll() {
     if (totalDistance > 0) {
       // 反弹
       totalDistance = 0;
-      this.style.transition = "all .3s";
+      this.style.transition = "all .6s";
       this.style.transform = "translateY(" + totalDistance + "px)";
     } else if (totalDistance < maxUpDis) { -100
       // 松开的时候 反弹 -只要超出最大上滑的距离的一点点的话 都要反弹
       totalDistance = maxUpDis;
-      this.style.transition = "all .3s";
+      this.style.transition = "all .6s";
       this.style.transform = "translateY(" + totalDistance + "px)";
     }
 

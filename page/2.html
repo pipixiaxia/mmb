@@ -23,7 +23,7 @@
     </div>
 
     <!--搜索框-->
-    <div class="search">
+    <div class="search" id="search">
         <input class="text" type="text" placeholder="请输入你想比价的商品">
         <input class="btn" type="button" value="搜 索">
     </div>
@@ -34,102 +34,127 @@
             <li class="fl">
                 <span>首页</span><i>&nbsp;>&nbsp;</i>
             </li>
-            <li class="fl">
+            <li class="fl" id="fenlei">
                 <span>全部分类</span><i>&nbsp;>&nbsp;</i>
             </li>
-            <li class="fl">
-                <span>电视</span><i>&nbsp;>&nbsp;</i>
+            <li class="category fl" id="category">
+                <span></span><i>&nbsp;>&nbsp;</i>
             </li>
         </ul>
         <input class="sx fr" type="button" value="筛 选">
     </div>
 
-    <!--搜索列表1-->
-    <div class="searchList">
-        <div class="fl jpg">
-            <img src="../images/tv1.jpg" alt="">
-        </div>
-        <div class="fr wz">
-            <span class="title">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视</span>
-            <span class="price"><i>￥</i><i>6499</i></span>
-            <span class="comment">
-                <span>10商城报价</span>
-                <span>有<i>3000</i>人评论</span>
-            </span>
-        </div>
+    <div class="content" id="content">
     </div>
-    <!--搜索列表2-->
-    <div class="searchList">
-        <div class="fl jpg">
-            <img src="../images/tv1.jpg" alt="">
-        </div>
-        <div class="fr wz">
-            <span class="title">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视</span>
-            <span class="price"><i>￥</i><i>6499</i></span>
-            <span class="comment">
-                <span>10商城报价</span>
-                <span>有<i>3000</i>人评论</span>
-            </span>
-        </div>
-    </div>
-    <!--搜索列表3-->
-    <div class="searchList">
-        <div class="fl jpg">
-            <img src="../images/tv1.jpg" alt="">
-        </div>
-        <div class="fr wz">
-            <span class="title">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视</span>
-            <span class="price"><i>￥</i><i>6499</i></span>
-            <span class="comment">
-                <span>10商城报价</span>
-                <span>有<i>3000</i>人评论</span>
-            </span>
-        </div>
-    </div>
-    <!--搜索列表4-->
-    <div class="searchList">
-        <div class="fl jpg">
-            <img src="../images/tv1.jpg" alt="">
-        </div>
-        <div class="fr wz">
-            <span class="title">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视</span>
-            <span class="price"><i>￥</i><i>6499</i></span>
-            <span class="comment">
-                <span><i>10</i>商城报价</span>
-                <span>有<i>3000</i>人评论</span>
-            </span>
-        </div>
-    </div>
-    <!--分页-->
     <div class="page">
         <button class="prevBtn">上一页</button>
         <select class="ye" name="" id="">
-            <option value="">1/3</option>
-            <option value="">1/3</option>
-            <option value="">1/3</option>
-        </select>
+                <option value=""><i>1</i><i>&nbsp;/&nbsp;</i><i>3</i></option>
+                <option value=""><i>2</i><i>&nbsp;/&nbsp;</i><i>3</i></option>
+                <option value=""><i>3</i><i>&nbsp;/&nbsp;</i><i>3</i></option>
+            </select>
         <button class="nextBtn">下一页</button>
     </div>
+
     <!--返回顶部-->
-  <div class="back .container-fluid">
-    <div class="row">
-      <div class="log col-xs-4">登录</div>
-      <div class="reg col-xs-4">注册</div>
-      <div class="bt col-xs-4 ">返回顶部<i class="iconfont">&#xe501;</i></div>
+    <div class="back .container-fluid">
+        <div class="row">
+            <div class="log col-xs-4">登录</div>
+            <div class="reg col-xs-4">注册</div>
+            <div class="bt col-xs-4 ">返回顶部<i class="iconfont">&#xe60a;</i></div>
+        </div>
+        <!--下载app-->
+        <div class="appDown">
+            <p class="p1"><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+            <p>m.manmanbuy.com</p>
+        </div>
     </div>
-    <!--下载app-->
-    <div class="appDown">
-      <p class="p1"><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
-      <p>m.manmanbuy.com</p>
-    </div>
-  </div>
-  <!--底部-->
-  <div class="bottom"></div>
 
     <script src="../script/jquery.1.12.4.js"></script>
     <script src="../script/bootstrap.js"></script>
+    <script src="../script/template.js"></script>
     <script src="../script/swiper.js"></script>
-    <script src="../script/2.js"></script>
+
+
+    <script type="template/html" id="tpl_1_1">
+        {{each result as value i}}
+        <div class="searchList" id="searchList">
+            <div class="fl jpg">{{=value.productImg}}</div>
+            <div class="fr wz">
+                <span class="title">{{value.productName}}</span>
+                <span class="price">{{value.productPrice}}</span>
+                <span class="comment">
+                <span>{{value.productQuote}}</span>&nbsp;&nbsp;&nbsp;
+                <span>{{value.productCom}}</span>
+                </span>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+
+
+    <!--************************商品列表功能界面****************************-->
+    <script>
+        // 根据分类id获取分类名称api
+        var search = location.search.slice(1);
+        var categoryid = search.split("=")[1];
+        var categoryid = Number(categoryid);
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getcategorybyid",
+            type: "get",
+            data: { categoryid: categoryid },
+            success: function (data) {
+                $(".category span").html(data.result[0].category);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    </script>
+    <!--************************商品列表功能界面****************************-->
+
+
+    <!--************************商品列表****************************-->
+    <script>
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getproductlist",
+            type: "get",
+            data: { categoryid: categoryid, pageid: 1 },
+            success: function (data) {
+                var html = template("tpl_1_1", data);
+                $("#content").html(html);
+
+                // 点击全部分类跳转到全部分类
+                $("#fenlei").click(function () {
+                    location.href = "./1.html";
+                });
+                // 点击当前栏目刷本页面
+                $("#category").click(function () {
+                    location.href = "./2.html?categoryId=" + categoryid;
+                });
+
+                // 点击商品跳转到详情页
+                $("#content").on("click", "#searchList", function () {
+                    var index = $(this).index();
+                    // 获取当前被点击商品的品牌
+                    var brand = data.result[index].brandName
+                    // 被点击商品的id
+                    var productId = data.result[index].productId;
+                    // 跳转页面
+                    location.href = "./3.html?brand=" + brand + "&productId=" + productId;
+                });
+                console.log(data);
+
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    </script>
+    <!--************************商品列表****************************-->
+
+    <script src="../script/dw.js"></script>
 </body>
 
 </html>

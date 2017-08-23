@@ -1,6 +1,6 @@
 .top {
   height: 50px;
-  background-color: #ff841d;
+  background-color: #296ecc;
   display: flex;
   justify-content: space-between;
 }
@@ -65,7 +65,7 @@ html {
   margin-top: 3px;
   margin-left: 10px;
   border-radius: 20px;
-  background-color: #ff841d;
+  background-color: #296ecc;
   color: #FFF;
 }
 
@@ -88,7 +88,7 @@ html {
   text-align: center;
   border-radius: 5px;
   font-size: 12px;
-  background-color: #ff841d;
+  background: linear-gradient(to bottom, #e6e6e6, #ccc);
   color: #fff;
 }
 
@@ -146,7 +146,7 @@ html {
   width: 80px;
   height: 30px;
   border-radius: 12px;
-  background-color: #ff841d;
+  background-color: #296ecc;
   color: #fff;
 }
 
@@ -163,7 +163,7 @@ html {
   width: 80px;
   height: 30px;
   border-radius: 12px;
-  background-color: #ff841d;
+  background-color: #296ecc;
   color: #fff;
 }
 

@@ -31,7 +31,7 @@ html {
 // 顶部
 .top {
     height: 50px;
-    background-color: #ff841d;
+    background-color: #296ecc;
     display: flex;
     justify-content: space-between;
     .logo {
@@ -71,13 +71,14 @@ html {
         margin-top: 3px;
         margin-left: 10px;
         border-radius: 20px;
-        background-color: #ff841d;
+        background-color: #296ecc;
         color: #FFF;
     }
 }
 
 // 下拉列表
 .down {
+    clear: both;
     margin: 5px;
     .dropdown {
         display: flex;
@@ -87,9 +88,8 @@ html {
             height: 40px;
             padding: 0 15px 0 15px;
             line-height: 40px;
-            margin-top: 5px;
-            border-radius: 20px;
-            color:#ff841d !important;
+            margin-top: 7px;
+            color:#0f64c2 !important;
             .jiantou {
                 font-size: 12px;    
             }
@@ -110,15 +110,21 @@ html {
         padding: 0;
         box-shadow: none;
         border:none;
-        box-sizing: content-box;
+        box-sizing: border-box;
+        padding: 0 10px 0 10px; 
         li {
-            width: 33.33%;
+            // width: 33.33%;
+            margin: 0 0 0 18px;
             text-align: center;
-            border: 1px solid #333;
+            border: 1px solid #296ecc;
             border-collapse: collapse;
+            border-radius: 2px;
+            height: 33px !important;
             a {
                 margin: 0;
                 line-height: 34px;
+                padding:0;
+                color: #296ecc;
             }
         }
     }
